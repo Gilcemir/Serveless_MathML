@@ -17,6 +17,8 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
+region = "us-east-2"
+image_repositories = ["NetCodeWebAPIServerless=831145958978.dkr.ecr.us-east-2.amazonaws.com/mathmmlaws785981b4/netcodewebapiserverlessa234682arepo"]
 
 [default.package.parameters]
 resolve_s3 = true
