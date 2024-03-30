@@ -7,4 +7,6 @@ build:
 run-image:
 	docker run -p 8080:8080 mathml
 
+test-lambda-locally:
+	sam local start-api -d 5858
 	

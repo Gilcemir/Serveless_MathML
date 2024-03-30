@@ -23,6 +23,7 @@ public class MathMLController : ControllerBase
     [HttpPost("replace-mathml")]
     public async Task<IActionResult> ReplaceMathML(IFormFile arquivo)
     {
+        Console.WriteLine("Passei por aqui - controller");
         var fileName = arquivo.FileName;
         byte[] novoArquivo = await _wordProcessorService.ReplaceMathML(arquivo);
         return File(novoArquivo, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", fileName);

@@ -31,6 +31,8 @@ Resources:
         ProxyResource:
           Type: HttpApi
           Properties:
+            #BinaryMediaTypes:
+             # - application~1vnd.openxmlformats-officedocument.wordprocessingml.document
             PayloadFormatVersion: '2.0'
             Path: /{proxy+}
             Method: ANY
@@ -38,6 +40,8 @@ Resources:
           Type: HttpApi
           PayloadFormatVersion: '2.0'
           Properties:
+            #BinaryMediaTypes:
+             # - application~1vnd.openxmlformats-officedocument.wordprocessingml.document
             Path: /
             Method: ANY
 

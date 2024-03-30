@@ -18,6 +18,7 @@ public class WordProcessorService : IWordProcessorService
     }
     public async Task<byte[]> ReplaceMathML(IFormFile file)
     {
+        Console.WriteLine("Passei por aqui - application");
         using MemoryStream stream = new MemoryStream();
         // Copiar o arquivo original para o MemoryStream
         await file.CopyToAsync(stream);
