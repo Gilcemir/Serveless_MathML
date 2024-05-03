@@ -1,0 +1,30 @@
+
+# curl -X POST -F "arquivo=@/Users/edubank/Downloads/equations.docx" http://127.0.0.1:3000/MathMl/replace-mathml
+POST http://127.0.0.1:3000/MathMl/replace-mathml
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Access-Control-Allow-Origin: *
+
+--WebAppBoundary
+Content-Disposition: form-data; name="arquivo"; filename="equations.docx"
+
+</Users/edubank/Downloads/equations.docx
+--WebAppBoundary--
+
+###
+# curl -X POST -F "arquivo=@/Users/edubank/Downloads/equations.docx" http://127.0.0.1:3000/MathMl/replace-mathml
+POST http://127.0.0.1:3000/MathMl/replace?name=equations.docx
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="arquivo"; filename="equations.docx"
+
+< /Users/edubank/Downloads/equations.docx
+--WebAppBoundary--
+
+###
+GET http://127.0.0.1:3000
+
+###
+GET http://127.0.0.1:3000/MathMl
+
+
