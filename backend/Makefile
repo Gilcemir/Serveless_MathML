@@ -8,5 +8,10 @@ run-image:
 	docker run -p 8080:8080 mathml
 
 test-lambda-locally:
-	sam local start-api -d 5858
+	sam local start-api
 	
+using-current-port:
+	sudo lsof -i -P -n | grep 3000 # or any other port
+
+kikll-port:
+	sudo kill -9 <PID>
