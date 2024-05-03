@@ -1,10 +1,12 @@
 using System.Text.Json;
+using Amazon.Lambda.Core;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using ServerlessAPI;
 using ServerlessAPI.Application;
 using ServerlessAPI.Infrastructure;
+using ServerlessAPI.Middlewares;
 
-
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 var builder = WebApplication.CreateBuilder(args);
 
 //Logger
@@ -40,7 +42,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-
+app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseHttpsRedirection();
 app.UseCors(Consts.CorsPolicyName);
 app.UseAuthorization();
